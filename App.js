@@ -7,7 +7,10 @@ import HomeScreen from "./screens/Home";
 import DetailsScreen from "./screens/Details";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
+import {
+  backgroundColor,
+  color,
+} from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -17,7 +20,15 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({ route }) => ({
-            headerShown: false,
+            headerStyle: {
+              backgroundColor: "#303030",
+            },
+            headerTitle: "The House",
+            headerTitleStyle: {
+              color: "white",
+            },
+            headerTitleAlign: "center",
+
             tabBarStyle: {
               backgroundColor: "#303030",
             },

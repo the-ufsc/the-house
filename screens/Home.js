@@ -12,10 +12,6 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>The House</Text>
-        </View>
-
         {houses?.map((house, index) => (
           <Card
             key={"house-" + index}
@@ -49,19 +45,6 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#303030",
-    display: "flex",
-    alignItems: "center",
-    padding: 10,
-    marginBottom: 25,
-  },
-  headerText: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "white",
-  },
-
   container: {
     flex: 1,
   },
