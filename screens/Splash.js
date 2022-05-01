@@ -17,6 +17,7 @@ export default function SplashScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
+      
       <View>
         <Image style={styles.image} source={require("../assets/house.png")} />
         <Text style={styles.text}>The House</Text>

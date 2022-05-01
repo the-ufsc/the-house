@@ -1,61 +1,65 @@
 [
-    {
-        "name": "Moradia 01",
-        "address": "Servidão das Pedras, 58",
-        "price": "680,00",
-        "accommodations": 5,
-        "images": [
-            {
-              "url":"https://www.imovelweb.com.br/noticias/wp-content/uploads/2020/03/original-f6761ad4df0a26d3ed2cdf9d7d34d893.jpeg"
-            }
-        ],
-        "gender": "man",
-        
-        "phone":"48999999999",
-        "email":"loremipsum@gmail.com",
-        "rooms_description":"",
-        "more_informations":"",
-        "area":"50",
-        "type":"Individual",
-        "equipments":"",
-        "bathroom":"Compartilhado"
-      },
+  {
+    "name": "Moradia 01",
+    "address": "Servidão das Pedras, 58",
+    "price": "680,00",
+    "accommodations": 5,
+    "images": [
       {
-        "name": "Moradia 02",
-        "address": "Rua das Águas, 22",
-        "price": "480,00",
-        "accommodations": 6,
-        "images": [
-          {"url":"https://vault.imob.online/resized/u0744/properties/photos/16504551/NiwaM3hgscyEVoYr5f8tmlAp-04.jpg/kxlarge.jpg"}
-        ],
-        "gender": "woman",
-
-        "phone":"48999999999",
-        "email":"loremipsum@gmail.com",
-        "rooms_description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula nisi. Sed mollis elit sed ligula tincidunt scelerisque.",
-        "more_informations":"Nullam ac bibendum lacus. Nunc molestie justo eget ex convallis ultricies. Praesent ut dignissim nunc. Duis fermentum augue diam",
-        "area":"50",
-        "type":"Individual",
-        "equipments":"Geladeira, fogão, pia, mesa de jantar, sofá, duas camas",
-        "bathroom":"Compartilhado"
-      },
-      {
-        "name": "Moradia 03",
-        "address": "Rua das ruas, 45",
-        "price": "500,00",
-        "accommodations": 5,
-        "images": [
-          {"url":"https://vault.imob.online/resized/u0744/properties/photos/16504551/NiwaM3hgscyEVoYr5f8tmlAp-04.jpg/kxlarge.jpg"}
-        ],
-        "gender": "man",
-
-        "phone":"48999999999",
-        "email":"loremipsum@gmail.com",
-        "rooms_description":"",
-        "more_informations":"",
-        "area":"50",
-        "type":"Individual",
-        "equipments":"",
-        "bathroom":"Compartilhado"
+        "url": "https://www.imovelweb.com.br/noticias/wp-content/uploads/2020/03/original-f6761ad4df0a26d3ed2cdf9d7d34d893.jpeg"
       }
+    ],
+    "gender": "man",
+
+    "phone": "48999999999",
+    "email": "loremipsum@gmail.com",
+    "rooms_description": "",
+    "more_informations": "",
+    "area": "50",
+    "type": "Individual",
+    "equipments": "",
+    "bathroom": "Compartilhado"
+  },
+  {
+    "name": "Moradia 02",
+    "address": "Rua das Águas, 22",
+    "price": "480,00",
+    "accommodations": 6,
+    "images": [
+      {
+        "url": "https://vault.imob.online/resized/u0744/properties/photos/16504551/NiwaM3hgscyEVoYr5f8tmlAp-04.jpg/kxlarge.jpg"
+      }
+    ],
+    "gender": "woman",
+
+    "phone": "48999999999",
+    "email": "loremipsum@gmail.com",
+    "rooms_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula nisi. Sed mollis elit sed ligula tincidunt scelerisque.",
+    "more_informations": "Nullam ac bibendum lacus. Nunc molestie justo eget ex convallis ultricies. Praesent ut dignissim nunc. Duis fermentum augue diam",
+    "area": "50",
+    "type": "Individual",
+    "equipments": "Geladeira, fogão, pia, mesa de jantar, sofá, duas camas",
+    "bathroom": "Compartilhado"
+  },
+  {
+    "name": "Moradia 03",
+    "address": "Rua das ruas, 45",
+    "price": "500,00",
+    "accommodations": 5,
+    "images": [
+      {
+        "url": "https://vault.imob.online/resized/u0744/properties/photos/16504551/NiwaM3hgscyEVoYr5f8tmlAp-04.jpg/kxlarge.jpg"
+      }
+    ],
+    "gender": "man",
+
+    "phone": "48999999999",
+    "email": "loremipsum@gmail.com",
+    "rooms_description": "",
+    "more_informations": "",
+    "area": "50",
+    "type": "Individual",
+    "equipments": "",
+    "bathroom": "Compartilhado"
+  }
 ]
