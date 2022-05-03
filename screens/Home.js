@@ -3,7 +3,7 @@ import React from "react";
 import { ScrollView, StyleSheet, View, Text, Image } from "react-native";
 import { Card } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ButtonsMenu from "../components/ButtonsMenu";
+// import ButtonsMenu from "../components/ButtonsMenu";
 import homes from "../database/homes.json";
 
 export default function HomeScreen({ navigation }) {

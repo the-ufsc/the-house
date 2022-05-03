@@ -11,7 +11,7 @@
     ],
     "gender": "man",
 
-    "phone": "48999999999",
+    "phone": "(48) 99899-9999",
     "email": "loremipsum@gmail.com",
     "rooms_description": "",
     "more_informations": "",
@@ -32,7 +32,7 @@
     ],
     "gender": "woman",
 
-    "phone": "48999999999",
+    "phone": "(48) 99899-9999",
     "email": "loremipsum@gmail.com",
     "rooms_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula nisi. Sed mollis elit sed ligula tincidunt scelerisque.",
     "more_informations": "Nullam ac bibendum lacus. Nunc molestie justo eget ex convallis ultricies. Praesent ut dignissim nunc. Duis fermentum augue diam",
@@ -53,7 +53,7 @@
     ],
     "gender": "man",
 
-    "phone": "48999999999",
+    "phone": "(48)99899-9999",
     "email": "loremipsum@gmail.com",
     "rooms_description": "",
     "more_informations": "",

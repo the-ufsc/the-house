@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
+import { StyleSheet, View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import home from "../database/homes.json";
 
@@ -23,7 +23,7 @@ export default function DetailsScreen(props) {
           <Ionicons name={house.gender} size={40} color="black" />
         </View>
         <View style={styles.infoBox}>
-          <View style={styles.address}>
+          <View style={styles.infoTitle}>
             <Text style={[{ textAlign: "center" }, { fontSize: 22 }]}>{house.address}</Text>
           </View>
           <View style={styles.infoText}>
@@ -49,6 +49,33 @@ export default function DetailsScreen(props) {
           <View style={styles.moreInfo}>
             <Text style={[styles.information]}>Informações adicionais:</Text>
             <Text style={styles.information}>{house.rooms_description}</Text>
+          </View>
+          <View style={styles.infoTitle}>
+            <Text style={[{ textAlign: "center" }, { fontSize: 20 }]}>Contato</Text>
+          </View>
+          <View style={styles.contact}>
+            <Text style={[styles.information]}>{house.phone}</Text>
+            <Text style={[styles.information]}>{house.email}</Text>
+          </View>
+
+          <View style={styles.caixa}>
+            <View style={styles.buttonsBox}>
+              <View style={styles.button}>
+                <TouchableOpacity>
+                  <Text>Mandar e-mail</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.button}>
+                <TouchableOpacity>
+                  <Text>Ligar</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.button}>
+                <TouchableOpacity>
+                  <Text>Mapa</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -81,7 +108,7 @@ const styles = StyleSheet.create({
     padding: "4%",
     backgroundColor: "#DCDCDC",
   },
-  address: {
+  infoTitle: {
     display: "flex",
     alignItems: "center",
     marginBottom: "5%",
@@ -97,5 +124,24 @@ const styles = StyleSheet.create({
   moreInfo: {
     marginTop: "3%",
     marginBottom: "3%",
+  },
+  contact: {},
+  caixa: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonsBox: {
+    margin: 20,
+    display: "flex",
+  },
+  button: {
+    margin: 200,
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 5,
+    paddingHorizontal: 10,
+    borderRadius: 15,
+    backgroundColor: "#FFF",
   },
 });
