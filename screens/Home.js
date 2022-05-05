@@ -4,6 +4,7 @@ import React from "react";
 import { ScrollView, StyleSheet, View, Text, Image } from "react-native";
 import { Card } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Filter from "../components/Filter";
 // import ButtonsMenu from "../components/ButtonsMenu";
 import homes from "../database/homes.json";
 
@@ -13,6 +14,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView>
+        <Filter />
         {houses?.map((house, index) => (
           <Card
             key={"house-" + index}
@@ -44,8 +46,6 @@ export default function HomeScreen({ navigation }) {
           </Card>
         ))}
       </ScrollView>
-
-      {/* <ButtonsMenu /> */}
     </View>
   );
 }
