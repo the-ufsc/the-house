@@ -1,7 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, View, Text, Image, ScrollView, TouchableOpacity, Linking } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
 import home from "../database/homes.json";
 
 export default function DetailsScreen(props) {
@@ -62,17 +70,17 @@ export default function DetailsScreen(props) {
             <View style={styles.buttonsBox}>
               <TouchableOpacity onPress={() => Linking.openURL(`mailto:${house.email}`)}>
                 <View style={styles.button}>
-                    <Text>Mandar e-mail</Text>
+                  <Text>Mandar e-mail</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => Linking.openURL(`tel:${house.phone}`)}>
                 <View style={styles.button}>
-                    <Text>Ligar</Text>
+                  <Text>Ligar</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => Linking.canOpenURL(`https:${house.maps}`)}>
                 <View style={styles.button}>
-                    <Text>Mapa</Text>
+                  <Text>Mapa</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -144,5 +152,4 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: "#FFF",
   },
-
 });
