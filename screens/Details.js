@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, Image, ScrollView, TouchableOpacity, Linking } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import home from "../database/homes.json";
 
@@ -60,21 +60,21 @@ export default function DetailsScreen(props) {
 
           <View style={styles.caixa}>
             <View style={styles.buttonsBox}>
-              <View style={styles.button}>
-                <TouchableOpacity>
-                  <Text>Mandar e-mail</Text>
-                </TouchableOpacity>
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity>
-                  <Text>Ligar</Text>
-                </TouchableOpacity>
-              </View>
-              <View style={styles.button}>
-                <TouchableOpacity>
-                  <Text>Mapa</Text>
-                </TouchableOpacity>
-              </View>
+              <TouchableOpacity onPress={() => Linking.openURL(`mailto:${house.email}`)}>
+                <View style={styles.button}>
+                    <Text>Mandar e-mail</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL(`tel:${house.phone}`)}>
+                <View style={styles.button}>
+                    <Text>Ligar</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.canOpenURL(`https:${house.maps}`)}>
+                <View style={styles.button}>
+                    <Text>Mapa</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -144,4 +144,5 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: "#FFF",
   },
+
 });

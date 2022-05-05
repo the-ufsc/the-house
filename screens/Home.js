@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { ScrollView, StyleSheet, View, Text, Image } from "react-native";
 import { Card } from "react-native-paper";
@@ -33,7 +34,12 @@ export default function HomeScreen({ navigation }) {
                 <Text>R$ {house.price}</Text>
                 <Text>{house.accommodations} alojamentos</Text>
               </View>
-              <Ionicons name={house.gender} size={32} color="black" />
+
+              {house.gender === "both" ? (
+                <MaterialCommunityIcons name="human-male-female" size={32} color="black" />
+              ) : (
+                <Ionicons name={house.gender} size={32} color="black" />
+              )}
             </View>
           </Card>
         ))}
