@@ -21,6 +21,7 @@ export default function DetailsScreen(props) {
   // navigation.setOptions({
   //   headerTitle: house.name
   //   // Cannot update a component (`BottomTabNavigator`)
+  //   // Add 'navigation' after 'props' in funct
   //   })
 
   return (
@@ -80,17 +81,20 @@ export default function DetailsScreen(props) {
 
           <View style={styles.caixa}>
             <View style={styles.buttonsBox}>
-              <TouchableOpacity onPress={() => Linking.openURL(`mailto:${house.email}`)}>
-                <View style={styles.button}>
-                  <Text style={{fontSize:24}}>Mandar e-mail</Text>
-                </View>
-              </TouchableOpacity>
               <TouchableOpacity onPress={() => Linking.openURL(`tel:${house.phone}`)}>
                 <View style={styles.button}>
                   <Text style={{fontSize:24}}>Ligar</Text>
                 </View>
               </TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL(`mailto:${house.email}`)}>
+                <View style={styles.button}>
+                  <Text style={{fontSize:24}}>Mandar e-mail</Text>
+                </View>
+              </TouchableOpacity>
               <View style={styles.mapBox}>
+                <View>
+                  <Text style={{fontSize:20}}>Localização</Text>
+                </View>
                 <MapView 
                   style={styles.mapStyle}
                   initialRegion={{
@@ -182,7 +186,7 @@ const styles = StyleSheet.create({
   mapBox: {
     backgroundColor:"#FFF",
     borderRadius: 15,
-    padding: 10,
+    paddingBottom: 10,
     margin: 5,
     width: 320,
     display:"flex",
