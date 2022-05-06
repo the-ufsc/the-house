@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import {
   SafeAreaView,
@@ -10,10 +11,17 @@ import {
   TouchableOpacity,
   Linking,
 } from "react-native";
+import MapView, { Marker, Callout } from "react-native-maps"
+import { useEffect } from "react/cjs/react.production.min";
 import home from "../database/homes.json";
 
 export default function DetailsScreen(props) {
-  const house = home[1];
+  const house = props.route.params.house;
+
+  // navigation.setOptions({
+  //   headerTitle: house.name
+  //   // Cannot update a component (`BottomTabNavigator`)
+  //   })
 
   return (
     <SafeAreaView>
@@ -28,7 +36,11 @@ export default function DetailsScreen(props) {
               <Text style={[styles.title, { fontSize: 30 }]}>R$ {house.price}</Text>
             </View>
           </View>
-          <Ionicons name={house.gender} size={40} color="black" />
+          {house.gender === "both" ? (
+                <MaterialCommunityIcons name="human-male-female" size={32} color="black" />
+              ) : (
+                <Ionicons name={house.gender} size={32} color="black" />
+              )}
         </View>
         <View style={styles.infoBox}>
           <View style={styles.infoTitle}>
@@ -70,19 +82,34 @@ export default function DetailsScreen(props) {
             <View style={styles.buttonsBox}>
               <TouchableOpacity onPress={() => Linking.openURL(`mailto:${house.email}`)}>
                 <View style={styles.button}>
-                  <Text>Mandar e-mail</Text>
+                  <Text style={{fontSize:24}}>Mandar e-mail</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => Linking.openURL(`tel:${house.phone}`)}>
                 <View style={styles.button}>
-                  <Text>Ligar</Text>
+                  <Text style={{fontSize:24}}>Ligar</Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => Linking.canOpenURL(`https:${house.maps}`)}>
-                <View style={styles.button}>
-                  <Text>Mapa</Text>
-                </View>
-              </TouchableOpacity>
+              <View style={styles.mapBox}>
+                <MapView 
+                  style={styles.mapStyle}
+                  initialRegion={{
+                    latitude: house.maps.latitude, 
+                    longitude: house.maps.longitude,
+                    latitudeDelta: house.maps.latitudeDelta,
+                    longitudeDelta: house.maps.longitudeDelta
+                    }}>
+                    <Marker
+                    coordinate={{
+                      latitude: house.maps.latitude,
+                      longitude: house.maps.longitude,
+                    }}
+                    title={house.name}
+                    description={house.address}
+                    />
+                  </MapView>
+                  
+              </View>
             </View>
           </View>
         </View>
@@ -152,4 +179,17 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: "#FFF",
   },
+  mapBox: {
+    backgroundColor:"#FFF",
+    borderRadius: 15,
+    padding: 10,
+    margin: 5,
+    width: 320,
+    display:"flex",
+    alignItems: "center"
+  },
+  mapStyle: {
+    width: 300,
+    height: 200,
+  }
 });
