@@ -8,7 +8,7 @@ import Filter from "../components/Filter";
 // import ButtonsMenu from "../components/ButtonsMenu";
 import homes from "../database/homes.json";
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ props, navigation }) {
   const houses = homes;
 
   return (
@@ -18,7 +18,7 @@ export default function HomeScreen({ navigation }) {
         {houses?.map((house, index) => (
           <Card
             key={"house-" + index}
-            onPress={() => navigation.navigate("Detalhes", { house: house })}
+            onPress={() => navigation.navigate("Detalhes", {house: house})}
             style={styles.card}
           >
             <Card.Title title={house.name} />

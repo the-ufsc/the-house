@@ -10,7 +10,12 @@
       }
     ],
     "gender": "man",
-    "maps": "https://www.google.com/maps/@-27.6000813,-48.5218137,3a,80.6y,204.51h,68.86t/data=!3m8!1e1!3m6!1sAF1QipPFfKDkXzSgbFzbzBAawmcIcBZHXbd6K0qIVySF!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPFfKDkXzSgbFzbzBAawmcIcBZHXbd6K0qIVySF%3Dw203-h100-k-no-pi-0-ya38.186005-ro-0-fo100!7i8192!8i4096",
+    "maps": {
+            "latitude": -27.598326168629306,
+            "longitude": -48.51982549300078,
+            "latitudeDelta": 0.0922,
+            "longitudeDelta": 0.0421},
+    
     "phone": "(48) 99899-9999",
     "email": "loremipsum@gmail.com",
     "rooms_description": "",
@@ -31,7 +36,12 @@
       }
     ],
     "gender": "woman",
-    "maps": "https://www.google.com/maps/@-27.6029184,-48.5241572,3a,75y,159.57h,80.75t/data=!3m7!1e1!3m5!1s-rEJjekxJPG3PgeXmegnpA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D-rEJjekxJPG3PgeXmegnpA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D10.487398%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656",
+    "maps": {
+            "latitude": -27.604921876499404, 
+            "longitude": -48.52144304504633,
+            "latitudeDelta": 0.0922,
+            "longitudeDelta": 0.0421},
+    
     "phone": "(48) 99899-9999",
     "email": "loremipsum@gmail.com",
     "rooms_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula nisi. Sed mollis elit sed ligula tincidunt scelerisque.",
@@ -52,7 +62,12 @@
       }
     ],
     "gender": "both",
-    "maps": "https://www.google.com/maps/@-27.6029184,-48.5241572,3a,75y,159.57h,80.75t/data=!3m7!1e1!3m5!1s-rEJjekxJPG3PgeXmegnpA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D-rEJjekxJPG3PgeXmegnpA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D10.487398%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656",
+    "maps": {
+            "latitude": -27.60131111494762, 
+            "longitude": -48.52516708358166,
+            "latitudeDelta": 0.0922,
+            "longitudeDelta": 0.0421},
+
     "phone": "(48)99899-9999",
     "email": "loremipsum@gmail.com",
     "rooms_description": "",
