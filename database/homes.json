@@ -2,7 +2,7 @@
   {
     "name": "Moradia 01",
     "address": "Servidão das Pedras, 58",
-    "price": "3680,00",
+    "price": 3680,
     "accommodations": 5,
     "images": [
       {
@@ -28,7 +28,7 @@
   {
     "name": "Moradia 02",
     "address": "Rua das Águas, 22",
-    "price": "2480,00",
+    "price": 2480.90,
     "accommodations": 6,
     "images": [
       {
@@ -54,7 +54,7 @@
   {
     "name": "Moradia 03",
     "address": "Rua das ruas, 45",
-    "price": "2500,00",
+    "price": 2500.00,
     "accommodations": 5,
     "images": [
       {
