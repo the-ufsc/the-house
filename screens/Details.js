@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
   Linking,
 } from "react-native";
-import MapView, { Marker, Callout } from "react-native-maps"
+import MapView, { Marker, Callout } from "react-native-maps";
 import { useEffect } from "react/cjs/react.production.min";
 import home from "../database/homes.json";
 
@@ -19,10 +19,10 @@ export default function DetailsScreen(props) {
   const house = props.route.params.house;
 
   // navigation.setOptions({
-  //   headerTitle: house.name
+  //   headerTitle: house.name,
   //   // Cannot update a component (`BottomTabNavigator`)
   //   // Add 'navigation' after 'props' in funct
-  //   })
+  // });
 
   return (
     <SafeAreaView>
@@ -38,10 +38,10 @@ export default function DetailsScreen(props) {
             </View>
           </View>
           {house.gender === "both" ? (
-                <MaterialCommunityIcons name="human-male-female" size={32} color="black" />
-              ) : (
-                <Ionicons name={house.gender} size={32} color="black" />
-              )}
+            <MaterialCommunityIcons name="human-male-female" size={32} color="black" />
+          ) : (
+            <Ionicons name={house.gender} size={32} color="black" />
+          )}
         </View>
         <View style={styles.infoBox}>
           <View style={styles.infoTitle}>
@@ -83,36 +83,36 @@ export default function DetailsScreen(props) {
             <View style={styles.buttonsBox}>
               <TouchableOpacity onPress={() => Linking.openURL(`tel:${house.phone}`)}>
                 <View style={styles.button}>
-                  <Text style={{fontSize:24}}>Ligar</Text>
+                  <Text style={{ fontSize: 24 }}>Ligar</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => Linking.openURL(`mailto:${house.email}`)}>
                 <View style={styles.button}>
-                  <Text style={{fontSize:24}}>Mandar e-mail</Text>
+                  <Text style={{ fontSize: 24 }}>Mandar e-mail</Text>
                 </View>
               </TouchableOpacity>
               <View style={styles.mapBox}>
                 <View>
-                  <Text style={{fontSize:20}}>Localização</Text>
+                  <Text style={{ fontSize: 20 }}>Localização</Text>
                 </View>
-                <MapView 
+                <MapView
                   style={styles.mapStyle}
                   initialRegion={{
-                    latitude: house.maps.latitude, 
+                    latitude: house.maps.latitude,
                     longitude: house.maps.longitude,
                     latitudeDelta: house.maps.latitudeDelta,
-                    longitudeDelta: house.maps.longitudeDelta
-                    }}>
-                    <Marker
+                    longitudeDelta: house.maps.longitudeDelta,
+                  }}
+                >
+                  <Marker
                     coordinate={{
                       latitude: house.maps.latitude,
                       longitude: house.maps.longitude,
                     }}
                     title={house.name}
                     description={house.address}
-                    />
-                  </MapView>
-                  
+                  />
+                </MapView>
               </View>
             </View>
           </View>
@@ -184,16 +184,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
   mapBox: {
-    backgroundColor:"#FFF",
+    backgroundColor: "#FFF",
     borderRadius: 15,
     paddingBottom: 10,
     margin: 5,
     width: 320,
-    display:"flex",
-    alignItems: "center"
+    display: "flex",
+    alignItems: "center",
   },
   mapStyle: {
     width: 300,
     height: 200,
-  }
+  },
 });

@@ -1505,14 +1505,11 @@
   version "2.0.0"
   resolved "https://registry.npmjs.org/@sideway/pinpoint/-/pinpoint-2.0.0.tgz"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
-<<<<<<< HEAD
-=======
 
 "@types/geojson@^7946.0.7":
   version "7946.0.8"
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.8.tgz#30744afdb385e2945e22f3b033f897f76b1f12ca"
   integrity sha512-1rkryxURpr6aWP7R786/UQOkJ3PcpQiWkAXBmdWc7ryFWqN6a4xfK7BtjXvFBKO9LjQ+MWQSWxYeZX1OApnArA==
->>>>>>> 0e1aa74332d379a16c80f508dad5f2c75b5cf6d4
 
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
@@ -4548,8 +4545,6 @@ react-native-iphone-x-helper@^1.3.1:
   resolved "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz"
   integrity sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg==
 
-<<<<<<< HEAD
-=======
 react-native-maps@0.29.4:
   version "0.29.4"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.29.4.tgz#eb4a446104ed2aca5361422d06712f26d4c0d562"
@@ -4557,7 +4552,6 @@ react-native-maps@0.29.4:
   dependencies:
     "@types/geojson" "^7946.0.7"
 
->>>>>>> 0e1aa74332d379a16c80f508dad5f2c75b5cf6d4
 react-native-paper@^4.12.1:
   version "4.12.1"
   resolved "https://registry.npmjs.org/react-native-paper/-/react-native-paper-4.12.1.tgz"
@@ -4582,11 +4576,7 @@ react-native-screens@~3.10.1:
 
 react-native-slider-picker@^1.1.4:
   version "1.1.4"
-<<<<<<< HEAD
-  resolved "https://registry.npmjs.org/react-native-slider-picker/-/react-native-slider-picker-1.1.4.tgz"
-=======
   resolved "https://registry.yarnpkg.com/react-native-slider-picker/-/react-native-slider-picker-1.1.4.tgz#e79741ba1d62d48dd338766aae62d0eb645efd5f"
->>>>>>> 0e1aa74332d379a16c80f508dad5f2c75b5cf6d4
   integrity sha512-ln5qfFh0TSzqTfRgRKrZddO+l45KNZ3MYibWApdm7rkstJsTUN/uVWjQgXuU5fBGdYtOfCvk6s5XcV0R/kA4+A==
   dependencies:
     react-native-css-vh-vw "^1.0.4"
