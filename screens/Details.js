@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   Linking,
 } from "react-native";
+import { formatCurrency } from "react-native-format-currency";
 import MapView, { Marker, Callout } from "react-native-maps";
 import { useEffect } from "react/cjs/react.production.min";
 import home from "../database/homes.json";
@@ -34,7 +35,9 @@ export default function DetailsScreen(props) {
               <Text style={[styles.title, { fontSize: 20 }]}>Alojamento {house.type}</Text>
             </View>
             <View>
-              <Text style={[styles.title, { fontSize: 30 }]}>R$ {house.price}</Text>
+              <Text style={[styles.title, { fontSize: 30 }]}>
+                {formatCurrency({ amount: house.price, code: "BRL" })[0]}
+              </Text>
             </View>
           </View>
           {house.gender === "both" ? (

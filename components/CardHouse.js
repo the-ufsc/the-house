@@ -2,16 +2,12 @@ import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
+import { formatCurrency } from "react-native-format-currency";
 import { Card } from "react-native-paper";
-// import numbro from "numbro";
+// ('./node_modules/numbro/dist/languages.min.js');
 
 export default function CardHouse({ house }) {
-  // const number = 123456.789;
-  // numbro.setLanguage("fr-FR");
-  // numbro.setLanguage("pt");
-  // const aaa = numbro(23425.45).formatCurrency();
-  // console.log(aaa);
-  // console.log(number.setLanguage("fr-FR"));
+  // console.log(formatCurrency({ amount: 1234.56, code: "BRL" })[0]);
 
   return (
     <Card style={styles.card}>
@@ -30,9 +26,7 @@ export default function CardHouse({ house }) {
             <Text style={{ fontWeight: "bold" }}>Endereço: </Text>
             {house.address}
           </Text>
-          <Text>
-            R$ {house.price.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}
-          </Text>
+          <Text>{formatCurrency({ amount: house.price, code: "BRL" })[0]}</Text>
           <Text>{house.accommodations} alojamentos</Text>
         </View>
 
