@@ -14,16 +14,15 @@ import {
 import { formatCurrency } from "react-native-format-currency";
 import MapView, { Marker, Callout } from "react-native-maps";
 import { useEffect } from "react/cjs/react.production.min";
-import home from "../database/homes.json";
 
 export default function DetailsScreen(props) {
   const house = props.route.params.house;
 
   // navigation.setOptions({
-  //   headerTitle: house.name,
+  //   headerTitle: house.name
   //   // Cannot update a component (`BottomTabNavigator`)
   //   // Add 'navigation' after 'props' in funct
-  // });
+  // })
 
   return (
     <SafeAreaView>
