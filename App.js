@@ -49,6 +49,9 @@ export default function App() {
             },
             tabBarActiveTintColor: "white",
             tabBarInactiveTintColor: "gray",
+            tabBarItemStyle: {
+              padding: 5,
+            },
           })}
         >
           <Tab.Screen name="Inicial" component={HomeScreen} />

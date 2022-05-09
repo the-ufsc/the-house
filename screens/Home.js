@@ -1,17 +1,24 @@
 import { Ionicons } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
+  Text,
+  Imag,
+  TouchableOpacity,
+} from "react-native";
 import { Card } from "react-native-paper";
-import CardHouse from "../components/CardHouse";
-import Filter from "../components/Filter";
 import homes from "../database/homes.json";
+import Filter from "../components/Filter";
+import CardHouse from "../components/CardHouse";
 
 export default function HomeScreen({ props, navigation }) {
   const houses = homes;
 
   const [min, setMin] = useState(0);
-  const [max, setMax] = useState(10000000);
+  const [max, setMax] = useState(5000);
   const [gender, setGender] = useState("any");
 
   function verify(house) {
@@ -25,9 +32,17 @@ export default function HomeScreen({ props, navigation }) {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Filter />
+        <Filter
+          min={min}
+          max={max}
+          setMin={setMin}
+          setMax={setMax}
+          gender={gender}
+          setGender={setGender}
+        />
+
         {houses?.filter(verify).map((house, index) => (
           <TouchableOpacity
             key={"house-" + index}
@@ -37,12 +52,14 @@ export default function HomeScreen({ props, navigation }) {
           </TouchableOpacity>
         ))}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#e0dede",
+    marginTop: 10,
   },
 });
