@@ -1,42 +1,53 @@
 import { Ionicons } from "@expo/vector-icons";
+<<<<<<< HEAD
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image } from "react-native";
 import { Card } from "react-native-paper";
+=======
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import { Card } from "react-native-paper";
+import CardHouse from "../components/CardHouse";
+import Filter from "../components/Filter";
+>>>>>>> e1de60ffe1632a094c91825332ff084640f9aa41
 import homes from "../database/homes.json";
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ props, navigation }) {
   const houses = homes;
+
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(10000000);
+  const [gender, setGender] = useState("any");
+
+  function verify(house) {
+    if (house.price >= min && house.price <= max && (gender === "any" || house.gender === gender)) {
+      console.log("achei");
+      return house;
+    } else {
+      console.log(house);
+      console.log("NAIN");
+    }
+  }
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        {houses?.map((house, index) => (
-          <Card
+        <Filter />
+        {houses?.filter(verify).map((house, index) => (
+          <TouchableOpacity
             key={"house-" + index}
             onPress={() => navigation.navigate("Detalhes", { house: house })}
-            style={styles.card}
           >
-            <Card.Title title={house.name} />
-            <View>
-              <Image
-                style={{ height: 200 }}
-                source={{
-                  uri: house.images[0].url,
-                }}
-              />
-            </View>
-            <View style={styles.infoBox}>
-              <View style={styles.boxCard}>
-                <Text>Endereço: {house.address}</Text>
-                <Text>R$ {house.price}</Text>
-                <Text>{house.accommodations} alojamentos</Text>
-              </View>
-              <Ionicons name={house.gender} size={32} color="black" />
-            </View>
-          </Card>
+            <CardHouse house={house} index={index} />
+          </TouchableOpacity>
         ))}
       </ScrollView>
+<<<<<<< HEAD
     </SafeAreaView>
+=======
+    </View>
+>>>>>>> e1de60ffe1632a094c91825332ff084640f9aa41
   );
 }
 
@@ -45,22 +56,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#e0dede",
     marginTop: 10,
-  },
-
-  infoBox: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: 15,
-  },
-
-  card: {
-    marginVertical: 5,
-    marginHorizontal: 10,
-  },
-
-  boxCard: {
-    marginHorizontal: 15,
   },
 });

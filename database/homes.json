@@ -2,7 +2,7 @@
   {
     "name": "Moradia 01",
     "address": "Servidão das Pedras, 58",
-    "price": "680,00",
+    "price": 3680.00,
     "accommodations": 5,
     "images": [
       {
@@ -10,8 +10,13 @@
       }
     ],
     "gender": "man",
-
-    "phone": "48999999999",
+    "maps": {
+      "latitude": -27.598326168629306,
+      "longitude": -48.51982549300078,
+      "latitudeDelta": 0.0922,
+      "longitudeDelta": 0.0421
+    },
+    "phone": "(48) 99899-9999",
     "email": "loremipsum@gmail.com",
     "rooms_description": "",
     "more_informations": "",
@@ -23,7 +28,7 @@
   {
     "name": "Moradia 02",
     "address": "Rua das Águas, 22",
-    "price": "480,00",
+    "price": 2480.95,
     "accommodations": 6,
     "images": [
       {
@@ -31,8 +36,14 @@
       }
     ],
     "gender": "woman",
+    "maps": {
+      "latitude": -27.604921876499404, 
+      "longitude": -48.52144304504633,
+      "latitudeDelta": 0.0922,
+      "longitudeDelta": 0.0421
+    },
 
-    "phone": "48999999999",
+    "phone": "(48) 99899-9999",
     "email": "loremipsum@gmail.com",
     "rooms_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula nisi. Sed mollis elit sed ligula tincidunt scelerisque.",
     "more_informations": "Nullam ac bibendum lacus. Nunc molestie justo eget ex convallis ultricies. Praesent ut dignissim nunc. Duis fermentum augue diam",
@@ -44,16 +55,21 @@
   {
     "name": "Moradia 03",
     "address": "Rua das ruas, 45",
-    "price": "500,00",
+    "price": 2500.25,
     "accommodations": 5,
     "images": [
       {
-        "url": "https://vault.imob.online/resized/u0744/properties/photos/16504551/NiwaM3hgscyEVoYr5f8tmlAp-04.jpg/kxlarge.jpg"
+        "url": "https://i.ytimg.com/vi/SrfIRlUmLQM/hqdefault.jpg"
       }
     ],
-    "gender": "man",
-
-    "phone": "48999999999",
+    "gender": "both",
+    "maps": {
+      "latitude": -27.60131111494762, 
+      "longitude": -48.52516708358166,
+      "latitudeDelta": 0.0922,
+      "longitudeDelta": 0.0421
+    },
+    "phone": "(48)99899-9999",
     "email": "loremipsum@gmail.com",
     "rooms_description": "",
     "more_informations": "",

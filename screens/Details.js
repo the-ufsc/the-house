@@ -1,11 +1,28 @@
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import home from "../database/homes.json";
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
+import { formatCurrency } from "react-native-format-currency";
+import MapView, { Marker, Callout } from "react-native-maps";
+import { useEffect } from "react/cjs/react.production.min";
 
 export default function DetailsScreen(props) {
-  const house = home[1];
+  const house = props.route.params.house;
+
+  // navigation.setOptions({
+  //   headerTitle: house.name
+  //   // Cannot update a component (`BottomTabNavigator`)
+  //   // Add 'navigation' after 'props' in funct
+  // })
 
   return (
     <SafeAreaView>
@@ -17,13 +34,19 @@ export default function DetailsScreen(props) {
               <Text style={[styles.title, { fontSize: 20 }]}>Alojamento {house.type}</Text>
             </View>
             <View>
-              <Text style={[styles.title, { fontSize: 30 }]}>R$ {house.price}</Text>
+              <Text style={[styles.title, { fontSize: 30 }]}>
+                {formatCurrency({ amount: house.price, code: "BRL" })[0]}
+              </Text>
             </View>
           </View>
-          <Ionicons name={house.gender} size={40} color="black" />
+          {house.gender === "both" ? (
+            <MaterialCommunityIcons name="human-male-female" size={32} color="black" />
+          ) : (
+            <Ionicons name={house.gender} size={32} color="black" />
+          )}
         </View>
         <View style={styles.infoBox}>
-          <View style={styles.address}>
+          <View style={styles.infoTitle}>
             <Text style={[{ textAlign: "center" }, { fontSize: 22 }]}>{house.address}</Text>
           </View>
           <View style={styles.infoText}>
@@ -49,6 +72,51 @@ export default function DetailsScreen(props) {
           <View style={styles.moreInfo}>
             <Text style={[styles.information]}>Informações adicionais:</Text>
             <Text style={styles.information}>{house.rooms_description}</Text>
+          </View>
+          <View style={styles.infoTitle}>
+            <Text style={[{ textAlign: "center" }, { fontSize: 20 }]}>Contato</Text>
+          </View>
+          <View style={styles.contact}>
+            <Text style={[styles.information]}>{house.phone}</Text>
+            <Text style={[styles.information]}>{house.email}</Text>
+          </View>
+
+          <View style={styles.caixa}>
+            <View style={styles.buttonsBox}>
+              <TouchableOpacity onPress={() => Linking.openURL(`tel:${house.phone}`)}>
+                <View style={styles.button}>
+                  <Text style={{ fontSize: 24 }}>Ligar</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL(`mailto:${house.email}`)}>
+                <View style={styles.button}>
+                  <Text style={{ fontSize: 24 }}>Mandar e-mail</Text>
+                </View>
+              </TouchableOpacity>
+              <View style={styles.mapBox}>
+                <View>
+                  <Text style={{ fontSize: 20 }}>Localização</Text>
+                </View>
+                <MapView
+                  style={styles.mapStyle}
+                  initialRegion={{
+                    latitude: house.maps.latitude,
+                    longitude: house.maps.longitude,
+                    latitudeDelta: house.maps.latitudeDelta,
+                    longitudeDelta: house.maps.longitudeDelta,
+                  }}
+                >
+                  <Marker
+                    coordinate={{
+                      latitude: house.maps.latitude,
+                      longitude: house.maps.longitude,
+                    }}
+                    title={house.name}
+                    description={house.address}
+                  />
+                </MapView>
+              </View>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -81,7 +149,7 @@ const styles = StyleSheet.create({
     padding: "4%",
     backgroundColor: "#DCDCDC",
   },
-  address: {
+  infoTitle: {
     display: "flex",
     alignItems: "center",
     marginBottom: "5%",
@@ -97,5 +165,37 @@ const styles = StyleSheet.create({
   moreInfo: {
     marginTop: "3%",
     marginBottom: "3%",
+  },
+  contact: {},
+  caixa: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonsBox: {
+    margin: 20,
+    display: "flex",
+  },
+  button: {
+    margin: 200,
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 5,
+    paddingHorizontal: 10,
+    borderRadius: 15,
+    backgroundColor: "#FFF",
+  },
+  mapBox: {
+    backgroundColor: "#FFF",
+    borderRadius: 15,
+    paddingBottom: 10,
+    margin: 5,
+    width: 320,
+    display: "flex",
+    alignItems: "center",
+  },
+  mapStyle: {
+    width: 300,
+    height: 200,
   },
 });
