@@ -7,7 +7,9 @@ import {
   View,
   Text,
   Imag,
+  Platform,
   TouchableOpacity,
+  Linking,
 } from "react-native";
 import { Card } from "react-native-paper";
 import homes from "../database/homes.json";
@@ -20,6 +22,11 @@ export default function HomeScreen({ props, navigation }) {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(5000);
   const [gender, setGender] = useState("any");
+
+  const sistem = Platform.select({
+    ios: 1,
+    android: 2,
+  });
 
   function verify(house) {
     if (house.price >= min && house.price <= max && (gender === "any" || house.gender === gender)) {
@@ -34,6 +41,16 @@ export default function HomeScreen({ props, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+        {/* <ImageViewer
+          imageUrls={images}
+          index={this.state.index}
+          onSwipeDown={() => {
+            console.log("onSwipeDown");
+          }}
+          onMove={(data) => console.log(data)}
+          enableSwipeDown={true}
+        /> */}
+
         <Filter
           min={min}
           max={max}

@@ -47,7 +47,10 @@ export default function Filter({ min, setMin, max, setMax, gender, setGender }) 
         <View>
           <View style={styles.container}>
             <View style={styles.box}>
-              <Text>Valor Máximo: {formatCurrency({ amount: max, code: "BRL" })[0]}</Text>
+              <View style={styles.box}>
+                <Text style={styles.fontBox}>Valor Máximo:</Text>
+                <Text>{formatCurrency({ amount: max, code: "BRL" })[0]}</Text>
+              </View>
               <Slider
                 style={{ width: "100%", height: 40 }}
                 minimumValue={0}
@@ -56,13 +59,16 @@ export default function Filter({ min, setMin, max, setMax, gender, setGender }) 
                 minimumTrackTintColor="#17fc03"
                 maximumTrackTintColor="#000000"
                 thumbTintColor="#17fc03"
-                onValueChange={(value) => verifyMax(value)}
                 value={max}
+                onSlidingComplete={(value) => verifyMax(value)}
               />
             </View>
 
             <View style={styles.box}>
-              <Text>Valor Mínimo: {formatCurrency({ amount: min, code: "BRL" })[0]}</Text>
+              <View style={styles.box}>
+                <Text style={styles.fontBox}>Valor Mínimo:</Text>
+                <Text>{formatCurrency({ amount: min, code: "BRL" })[0]}</Text>
+              </View>
               <Slider
                 style={{ width: "100%", height: 40 }}
                 minimumValue={0}
@@ -71,13 +77,13 @@ export default function Filter({ min, setMin, max, setMax, gender, setGender }) 
                 minimumTrackTintColor="#17fc03"
                 maximumTrackTintColor="#000000"
                 thumbTintColor="#17fc03"
-                onValueChange={(value) => verifyMin(value)}
                 value={min}
+                onSlidingComplete={(value) => verifyMin(value)}
               />
             </View>
 
             <View style={styles.box}>
-              <Text> Genero: </Text>
+              <Text style={styles.fontBox}>Genero:</Text>
               <View style={styles.boxCheck}>
                 <RadioButton
                   color="#17fc03"
@@ -98,7 +104,6 @@ export default function Filter({ min, setMin, max, setMax, gender, setGender }) 
                   onPress={() => setGender("both")}
                 />
                 <Text onPress={() => setGender("both")} style={styles.textCheck}>
-                  {" "}
                   Ambos
                 </Text>
               </View>
@@ -145,10 +150,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
+  fontBox: {
+    fontSize: 15,
+    marginVertical: 5,
+  },
+
   textCheck: {
     display: "flex",
     fontSize: 15,
-    // fontWeight: "bold",
+    width: 100,
     marginBottom: 5,
   },
 
