@@ -39,11 +39,17 @@ export default function DetailsScreen(props) {
               </Text>
             </View>
           </View>
-          {house.gender === "both" ? (
-            <MaterialCommunityIcons name="human-male-female" size={32} color="black" />
-          ) : (
-            <Ionicons name={house.gender} size={32} color="black" />
-          )}
+          <View style={styles.icons}>
+            {house.gender === "both" ? (
+              <MaterialCommunityIcons name="human-male-female" size={32} color="black" />
+            ) : (
+              <Ionicons name={house.gender} size={32} color="black" />
+            )}
+            <TouchableOpacity>
+              <MaterialCommunityIcons name="star-outline" size={60} color="orange"/>
+            </TouchableOpacity>
+          </View>
+          
         </View>
         <View style={styles.infoBox}>
           <View style={styles.infoTitle}>
@@ -198,4 +204,11 @@ const styles = StyleSheet.create({
     width: 300,
     height: 200,
   },
+  icons: {
+    display:"flex",
+    alignItems:'center',
+    justifyContent:'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+  }
 });
