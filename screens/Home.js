@@ -1,14 +1,24 @@
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
-import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image } from "react-native";
+import React, { useState } from "react";
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
+  Text,
+  Imag,
+  TouchableOpacity,
+} from "react-native";
 import { Card } from "react-native-paper";
 import homes from "../database/homes.json";
+import Filter from "../components/Filter";
+import CardHouse from "../components/CardHouse";
 
 export default function HomeScreen({ props, navigation }) {
   const houses = homes;
 
   const [min, setMin] = useState(0);
-  const [max, setMax] = useState(10000000);
+  const [max, setMax] = useState(5000);
   const [gender, setGender] = useState("any");
 
   function verify(house) {
@@ -24,7 +34,15 @@ export default function HomeScreen({ props, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Filter />
+        <Filter
+          min={min}
+          max={max}
+          setMin={setMin}
+          setMax={setMax}
+          gender={gender}
+          setGender={setGender}
+        />
+
         {houses?.filter(verify).map((house, index) => (
           <TouchableOpacity
             key={"house-" + index}

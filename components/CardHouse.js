@@ -4,11 +4,8 @@ import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import { formatCurrency } from "react-native-format-currency";
 import { Card } from "react-native-paper";
-// ('./node_modules/numbro/dist/languages.min.js');
 
 export default function CardHouse({ house }) {
-  // console.log(formatCurrency({ amount: 1234.56, code: "BRL" })[0]);
-
   return (
     <Card style={styles.card}>
       <Card.Title title={house.name} />
