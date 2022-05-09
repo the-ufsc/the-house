@@ -6,13 +6,14 @@ import {
   StyleSheet,
   View,
   Text,
-  Imag,
+  Image,
   TouchableOpacity,
 } from "react-native";
 import { Card } from "react-native-paper";
 import homes from "../database/homes.json";
 import Filter from "../components/Filter";
 import CardHouse from "../components/CardHouse";
+import Carrosel from "../components/Carrosel";
 
 export default function HomeScreen({ props, navigation }) {
   const houses = homes;
@@ -23,11 +24,11 @@ export default function HomeScreen({ props, navigation }) {
 
   function verify(house) {
     if (house.price >= min && house.price <= max && (gender === "any" || house.gender === gender)) {
-      console.log("achei");
+      // console.log("achei");
       return house;
     } else {
       console.log(house);
-      console.log("NAIN");
+      // console.log("NAIN");
     }
   }
 
@@ -42,6 +43,8 @@ export default function HomeScreen({ props, navigation }) {
           gender={gender}
           setGender={setGender}
         />
+
+        <Carrosel />
 
         {houses?.filter(verify).map((house, index) => (
           <TouchableOpacity

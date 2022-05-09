@@ -10,8 +10,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Linking,
-  FlatList
-
+  FlatList,
 } from "react-native";
 import { formatCurrency } from "react-native-format-currency";
 import MapView, { Marker, Callout } from "react-native-maps";
@@ -21,13 +20,11 @@ import { InteractionManager } from "react-native-web";
 export default function DetailsScreen(props) {
   const index = props.route.params.index;
   const house = props.route.params.house;
-  const imgs = house.images;
-  
-  const OnBoardingItem = ({item}) => {
-    return (
-      <Image source={{ uri: item.url }}/>
-    )
-  }
+
+  const OnBoardingItem = ({ item }) => {
+    console.log(item.item.url);
+    return <Image source={{ uri: item.item.url }} style={styles.image} />;
+  };
 
   // navigation.setOptions({
   //   headerTitle: house.name
@@ -39,18 +36,18 @@ export default function DetailsScreen(props) {
     <SafeAreaView>
       <ScrollView style={styles.container}>
         <View>
-          {/* <FlatList
-            data={imgs}
+          <FlatList
+            data={house.images}
             style={styles.image}
             pagingEnabled
             horizontal
             showsHorizontalScrollIndicator={false}
-            keyExtractor={(item)=> String(item?.key)}
-            renderItem={(item) => <OnBoardingItem item={item}/>}
-          /> */}
+            keyExtractor={(item) => String(item?.key)}
+            renderItem={(item) => <OnBoardingItem item={item} />}
+          />
         </View>
-        
-        <Image style={styles.image} source={{ uri: house.images[0].url }} />
+
+        {/* <Image style={styles.image} source={{ uri: house.images[0].url }} /> */}
         <View style={styles.topBox}>
           <View>
             <View opacity={0.4}>
@@ -69,12 +66,11 @@ export default function DetailsScreen(props) {
               <Ionicons name={house.gender} size={32} color="black" />
             )}
             <TouchableOpacity
-              // onPress={()=>addFav(house)}
-              >
-              <MaterialCommunityIcons name="star-outline" size={60} color="orange"/>
+            // onPress={()=>addFav(house)}
+            >
+              <MaterialCommunityIcons name="star-outline" size={60} color="orange" />
             </TouchableOpacity>
           </View>
-          
         </View>
         <View style={styles.infoBox}>
           <View style={styles.infoTitle}>
@@ -230,10 +226,10 @@ const styles = StyleSheet.create({
     height: 200,
   },
   icons: {
-    display:"flex",
-    alignItems:'center',
-    justifyContent:'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     flexDirection: "row",
     justifyContent: "space-between",
-  }
+  },
 });
