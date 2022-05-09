@@ -1,16 +1,14 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { ScrollView, StyleSheet, View, Text, Image } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, View, Text, Image } from "react-native";
 import { Card } from "react-native-paper";
-import { SafeAreaView } from "react-native-safe-area-context";
-import ButtonsMenu from "../components/ButtonsMenu";
 import homes from "../database/homes.json";
 
 export default function HomeScreen({ navigation }) {
   const houses = homes;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
         {houses?.map((house, index) => (
           <Card
@@ -38,15 +36,15 @@ export default function HomeScreen({ navigation }) {
           </Card>
         ))}
       </ScrollView>
-
-      {/* <ButtonsMenu /> */}
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#e0dede",
+    marginTop: 10,
   },
 
   infoBox: {
