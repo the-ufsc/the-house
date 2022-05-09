@@ -15,6 +15,7 @@ import Favorites from "./screens/Favorites";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
+  const favList = []
 
   return (
     <PaperProvider>

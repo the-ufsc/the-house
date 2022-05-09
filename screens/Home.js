@@ -46,7 +46,7 @@ export default function HomeScreen({ props, navigation }) {
         {houses?.filter(verify).map((house, index) => (
           <TouchableOpacity
             key={"house-" + index}
-            onPress={() => navigation.navigate("Detalhes", { house: house })}
+            onPress={() => navigation.navigate("Detalhes", { house: house, index: index })}
           >
             <CardHouse house={house} index={index} />
           </TouchableOpacity>

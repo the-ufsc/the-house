@@ -10,13 +10,24 @@ import {
   ScrollView,
   TouchableOpacity,
   Linking,
+  FlatList
+
 } from "react-native";
 import { formatCurrency } from "react-native-format-currency";
 import MapView, { Marker, Callout } from "react-native-maps";
-import { useEffect } from "react/cjs/react.production.min";
+import { InteractionManager } from "react-native-web";
+// import { useEffect } from "react/cjs/react.production.min";
 
 export default function DetailsScreen(props) {
+  const index = props.route.params.index;
   const house = props.route.params.house;
+  const imgs = house.images;
+  
+  const OnBoardingItem = ({item}) => {
+    return (
+      <Image source={{ uri: item.url }}/>
+    )
+  }
 
   // navigation.setOptions({
   //   headerTitle: house.name
@@ -27,6 +38,18 @@ export default function DetailsScreen(props) {
   return (
     <SafeAreaView>
       <ScrollView style={styles.container}>
+        <View>
+          {/* <FlatList
+            data={imgs}
+            style={styles.image}
+            pagingEnabled
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item)=> String(item?.key)}
+            renderItem={(item) => <OnBoardingItem item={item}/>}
+          /> */}
+        </View>
+        
         <Image style={styles.image} source={{ uri: house.images[0].url }} />
         <View style={styles.topBox}>
           <View>
@@ -45,7 +68,9 @@ export default function DetailsScreen(props) {
             ) : (
               <Ionicons name={house.gender} size={32} color="black" />
             )}
-            <TouchableOpacity>
+            <TouchableOpacity
+              // onPress={()=>addFav(house)}
+              >
               <MaterialCommunityIcons name="star-outline" size={60} color="orange"/>
             </TouchableOpacity>
           </View>
