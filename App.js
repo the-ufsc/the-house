@@ -11,9 +11,11 @@ import {
   backgroundColor,
   color,
 } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
+import Favorites from "./screens/Favorites";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
+  const favList = []
 
   return (
     <PaperProvider>
@@ -55,7 +57,7 @@ export default function App() {
         >
           <Tab.Screen name="Inicial" component={HomeScreen} />
           <Tab.Screen name="Detalhes" component={DetailsScreen} />
-          <Tab.Screen name="Favoritos" component={DetailsScreen} />
+          <Tab.Screen name="Favoritos" component={Favorites} />
         </Tab.Navigator>
       </NavigationContainer>
     </PaperProvider>

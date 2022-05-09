@@ -10,13 +10,21 @@ import {
   ScrollView,
   TouchableOpacity,
   Linking,
+  FlatList,
 } from "react-native";
 import { formatCurrency } from "react-native-format-currency";
 import MapView, { Marker, Callout } from "react-native-maps";
-import { useEffect } from "react/cjs/react.production.min";
+import { InteractionManager } from "react-native-web";
+// import { useEffect } from "react/cjs/react.production.min";
 
 export default function DetailsScreen(props) {
+  const index = props.route.params.index;
   const house = props.route.params.house;
+
+  const OnBoardingItem = ({ item }) => {
+    console.log(item.item.url);
+    return <Image source={{ uri: item.item.url }} style={styles.image} />;
+  };
 
   // navigation.setOptions({
   //   headerTitle: house.name
@@ -27,7 +35,19 @@ export default function DetailsScreen(props) {
   return (
     <SafeAreaView>
       <ScrollView style={styles.container}>
-        <Image style={styles.image} source={{ uri: house.images[0].url }} />
+        <View>
+          <FlatList
+            data={house.images}
+            style={styles.image}
+            pagingEnabled
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => String(item?.key)}
+            renderItem={(item) => <OnBoardingItem item={item} />}
+          />
+        </View>
+
+        {/* <Image style={styles.image} source={{ uri: house.images[0].url }} /> */}
         <View style={styles.topBox}>
           <View>
             <View opacity={0.4}>
@@ -39,11 +59,18 @@ export default function DetailsScreen(props) {
               </Text>
             </View>
           </View>
-          {house.gender === "both" ? (
-            <MaterialCommunityIcons name="human-male-female" size={32} color="black" />
-          ) : (
-            <Ionicons name={house.gender} size={32} color="black" />
-          )}
+          <View style={styles.icons}>
+            {house.gender === "both" ? (
+              <MaterialCommunityIcons name="human-male-female" size={32} color="black" />
+            ) : (
+              <Ionicons name={house.gender} size={32} color="black" />
+            )}
+            <TouchableOpacity
+            // onPress={()=>addFav(house)}
+            >
+              <MaterialCommunityIcons name="star-outline" size={60} color="orange" />
+            </TouchableOpacity>
+          </View>
         </View>
         <View style={styles.infoBox}>
           <View style={styles.infoTitle}>
@@ -197,5 +224,12 @@ const styles = StyleSheet.create({
   mapStyle: {
     width: 300,
     height: 200,
+  },
+  icons: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });

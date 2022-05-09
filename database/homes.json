@@ -5,7 +5,7 @@
     "price": 3680.00,
     "accommodations": 5,
     "images": [
-      {
+      { "key":"1",
         "url": "https://www.imovelweb.com.br/noticias/wp-content/uploads/2020/03/original-f6761ad4df0a26d3ed2cdf9d7d34d893.jpeg"
       }
     ],
@@ -31,7 +31,7 @@
     "price": 2480.95,
     "accommodations": 6,
     "images": [
-      {
+      { "key":"1",
         "url": "https://vault.imob.online/resized/u0744/properties/photos/16504551/NiwaM3hgscyEVoYr5f8tmlAp-04.jpg/kxlarge.jpg"
       }
     ],
@@ -58,9 +58,10 @@
     "price": 2500.25,
     "accommodations": 5,
     "images": [
-      {
-        "url": "https://i.ytimg.com/vi/SrfIRlUmLQM/hqdefault.jpg"
-      }
+      { "key": 1,
+        "url": "https://i.ytimg.com/vi/SrfIRlUmLQM/hqdefault.jpg"},
+      { "key": 2,
+        "url": "https://www.decorfacil.com/wp-content/uploads/2017/07/20170720decoracao-de-casas-pequenas-1.jpg"}
     ],
     "gender": "both",
     "maps": {
