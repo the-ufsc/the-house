@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import React from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   StyleSheet,
@@ -15,14 +15,16 @@ import {
 import { formatCurrency } from "react-native-format-currency";
 import MapView, { Marker, Callout } from "react-native-maps";
 import { InteractionManager } from "react-native-web";
+// import { useState } from "react/cjs/react.production.min";
 // import { useEffect } from "react/cjs/react.production.min";
 
 export default function DetailsScreen(props) {
   const index = props.route.params.index;
   const house = props.route.params.house;
 
+  const [activeIndex, serActiveIndex] = useState(0)
+
   const OnBoardingItem = ({ item }) => {
-    console.log(item.item.url);
     return <Image source={{ uri: item.item.url }} style={styles.image} />;
   };
 
@@ -167,7 +169,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: "3%",
   },
   image: {
-    width: "100%",
+    width: 500,
     height: 250,
   },
 
