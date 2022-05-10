@@ -15,13 +15,13 @@ import Favorites from "./screens/Favorites";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
-  const favList = []
 
   return (
     <PaperProvider>
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({ route }) => ({
+            headerShadowVisible: false,
             headerStyle: {
               backgroundColor: "#303030",
             },
@@ -56,7 +56,11 @@ export default function App() {
           })}
         >
           <Tab.Screen name="Inicial" component={HomeScreen} />
-          <Tab.Screen name="Detalhes" component={DetailsScreen} />
+          <Tab.Screen
+            options={{ tabBarItemStyle: { display: "none" } }}
+            name="Detalhes"
+            component={DetailsScreen}
+          />
           <Tab.Screen name="Favoritos" component={Favorites} />
         </Tab.Navigator>
       </NavigationContainer>

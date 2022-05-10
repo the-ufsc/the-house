@@ -19,10 +19,7 @@ import { InteractionManager } from "react-native-web";
 // import { useEffect } from "react/cjs/react.production.min";
 
 export default function DetailsScreen(props) {
-  const index = props.route.params.index;
   const house = props.route.params.house;
-
-  const [activeIndex, serActiveIndex] = useState(0)
 
   const OnBoardingItem = ({ item }) => {
     return <Image source={{ uri: item.item.url }} style={styles.image} />;

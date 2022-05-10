@@ -1,12 +1,12 @@
 import { SafeAreaView, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import Slider from "@react-native-community/slider";
 import { formatCurrency } from "react-native-format-currency";
 import { RadioButton } from "react-native-paper";
 
 export default function Filter({ min, setMin, max, setMax, gender, setGender }) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   function verifyMin(value) {
     if (value > max) setMax(5000);
@@ -82,54 +82,61 @@ export default function Filter({ min, setMin, max, setMax, gender, setGender }) 
               />
             </View>
 
-            <View style={styles.box}>
-              <Text style={styles.fontBox}>Genero:</Text>
-              <View style={styles.boxCheck}>
-                <RadioButton
-                  color="#17fc03"
-                  value="any"
-                  status={gender === "any" ? "checked" : "unchecked"}
-                  onPress={() => setGender("any")}
-                />
-                <Text onPress={() => setGender("any")} style={styles.textCheck}>
-                  Tanto faz!
-                </Text>
-              </View>
+            <View style={[styles.box, { marginBottom: 20 }]}>
+              <Text style={styles.fontBox}>Gênero:</Text>
 
-              <View style={styles.boxCheck}>
-                <RadioButton
-                  color="#17fc03"
-                  value="both"
-                  status={gender === "both" ? "checked" : "unchecked"}
-                  onPress={() => setGender("both")}
-                />
-                <Text onPress={() => setGender("both")} style={styles.textCheck}>
-                  Ambos
-                </Text>
-              </View>
+              <View style={styles.row}>
+                <View>
+                  <View style={styles.boxCheck}>
+                    <RadioButton
+                      color="#17fc03"
+                      value="any"
+                      status={gender === "any" ? "checked" : "unchecked"}
+                      onPress={() => setGender("any")}
+                    />
+                    <Text onPress={() => setGender("any")} style={styles.textCheck}>
+                      Todos
+                    </Text>
+                  </View>
 
-              <View style={styles.boxCheck}>
-                <RadioButton
-                  color="#17fc03"
-                  value="man"
-                  status={gender === "man" ? "checked" : "unchecked"}
-                  onPress={() => setGender("man")}
-                />
-                <Text onPress={() => setGender("man")} style={styles.textCheck}>
-                  Masculina
-                </Text>
-              </View>
+                  <View style={styles.boxCheck}>
+                    <RadioButton
+                      color="#17fc03"
+                      value="both"
+                      status={gender === "both" ? "checked" : "unchecked"}
+                      onPress={() => setGender("both")}
+                    />
+                    <Text onPress={() => setGender("both")} style={styles.textCheck}>
+                      Ambos
+                    </Text>
+                  </View>
+                </View>
 
-              <View style={styles.boxCheck}>
-                <RadioButton
-                  color="#17fc03"
-                  value="woman"
-                  status={gender === "woman" ? "checked" : "unchecked"}
-                  onPress={() => setGender("woman")}
-                />
-                <Text onPress={() => setGender("woman")} style={styles.textCheck}>
-                  Feminina
-                </Text>
+                <View>
+                  <View style={styles.boxCheck}>
+                    <RadioButton
+                      color="#17fc03"
+                      value="man"
+                      status={gender === "man" ? "checked" : "unchecked"}
+                      onPress={() => setGender("man")}
+                    />
+                    <Text onPress={() => setGender("man")} style={styles.textCheck}>
+                      Masculina
+                    </Text>
+                  </View>
+
+                  <View style={styles.boxCheck}>
+                    <RadioButton
+                      color="#17fc03"
+                      value="woman"
+                      status={gender === "woman" ? "checked" : "unchecked"}
+                      onPress={() => setGender("woman")}
+                    />
+                    <Text onPress={() => setGender("woman")} style={styles.textCheck}>
+                      Feminina
+                    </Text>
+                  </View>
+                </View>
               </View>
             </View>
           </View>
@@ -144,6 +151,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
+  row: {
+    display: "flex",
+    flexDirection: "row",
+  },
+
   boxCheck: {
     display: "flex",
     flexDirection: "row",
@@ -151,14 +163,14 @@ const styles = StyleSheet.create({
   },
 
   fontBox: {
-    fontSize: 15,
+    fontSize: 18,
     marginVertical: 5,
   },
 
   textCheck: {
     display: "flex",
     fontSize: 15,
-    width: 100,
+    width: 75,
     marginBottom: 5,
   },
 
