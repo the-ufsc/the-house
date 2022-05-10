@@ -15,7 +15,7 @@ import { Card } from "react-native-paper";
 import homes from "../database/homes.json";
 import Filter from "../components/Filter";
 import CardHouse from "../components/CardHouse";
-import Carrosel from "../components/Carrosel";
+// import Carrosel from "../components/Carrosel";
 
 export default function HomeScreen({ props, navigation }) {
   const houses = homes;
@@ -61,7 +61,7 @@ export default function HomeScreen({ props, navigation }) {
           setGender={setGender}
         />
 
-        <Carrosel />
+        {/* <Carrosel /> */}
 
         {houses?.filter(verify).map((house, index) => (
           <TouchableOpacity
