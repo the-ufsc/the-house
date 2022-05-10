@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     textAlign: "right",
     backgroundColor: "#17fc03",
     padding: 5,
+    borderRadius: 5,
   },
 
   textAcess: {

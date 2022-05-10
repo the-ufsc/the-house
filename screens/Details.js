@@ -1,6 +1,9 @@
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
+import { Dimensions } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,9 +17,6 @@ import {
 } from "react-native";
 import { formatCurrency } from "react-native-format-currency";
 import MapView, { Marker, Callout } from "react-native-maps";
-import { InteractionManager } from "react-native-web";
-// import { useState } from "react/cjs/react.production.min";
-// import { useEffect } from "react/cjs/react.production.min";
 
 export default function DetailsScreen(props) {
   const house = props.route.params.house;
@@ -25,11 +25,19 @@ export default function DetailsScreen(props) {
     return <Image source={{ uri: item.item.url }} style={styles.image} />;
   };
 
-  // navigation.setOptions({
-  //   headerTitle: house.name
-  //   // Cannot update a component (`BottomTabNavigator`)
-  //   // Add 'navigation' after 'props' in funct
-  // })
+  // storeDat("abcbc");
+  // const favorites_id = [1,2,3,4,5,6]
+
+  // async function storeDat(value) {
+  //   try {
+  //     console.log("humm");
+  //     // await AsyncStorage.setItem("@storage_Key", value);
+  //     console.log("oba: ", await AsyncStorage.getItem("favorites_id"));
+  //     // console.log("okay");
+  //   } catch (e) {
+  //     console.log("aaaaaa");
+  //   }
+  // }
 
   return (
     <SafeAreaView>
@@ -166,7 +174,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: "3%",
   },
   image: {
-    width: 500,
+    width: Dimensions.get("screen").width,
     height: 250,
   },
 

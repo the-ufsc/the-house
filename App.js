@@ -40,8 +40,6 @@ export default function App() {
 
               if (route.name === "Inicial") {
                 iconName = "home";
-              } else if (route.name === "Detalhes") {
-                iconName = "information-circle";
               } else if (route.name === "Favoritos") {
                 iconName = "star";
               }
