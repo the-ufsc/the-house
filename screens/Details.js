@@ -17,27 +17,43 @@ import {
 } from "react-native";
 import { formatCurrency } from "react-native-format-currency";
 import MapView, { Marker, Callout } from "react-native-maps";
+import { insertValue, removeValue, verifyIsFavorite } from "../helpers/favorite";
+import { useEffect } from "react";
 
 export default function DetailsScreen(props) {
   const house = props.route.params.house;
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const OnBoardingItem = ({ item }) => {
     return <Image source={{ uri: item.item.url }} style={styles.image} />;
   };
 
-  // storeDat("abcbc");
-  // const favorites_id = [1,2,3,4,5,6]
+  // toda vez que abrir um detalhe vai verificar se eh favorito e setar
+  useEffect(() => {
+    setIsFavorite(false);
+    verifyIsFavorite(house.id).then(
+      function (isFav) {
+        setIsFavorite(isFav);
+      },
+      function (e) {
+        console.log("Error", e);
+      }
+    );
+  }, [house]);
 
-  // async function storeDat(value) {
-  //   try {
-  //     console.log("humm");
-  //     // await AsyncStorage.setItem("@storage_Key", value);
-  //     console.log("oba: ", await AsyncStorage.getItem("favorites_id"));
-  //     // console.log("okay");
-  //   } catch (e) {
-  //     console.log("aaaaaa");
-  //   }
-  // }
+  function handleFavorite() {
+    try {
+      if (isFavorite) {
+        removeValue(house.id);
+        setIsFavorite(false);
+      } else {
+        insertValue(house.id);
+        setIsFavorite(true);
+      }
+    } catch (e) {
+      console.log("Error", e);
+    }
+  }
 
   return (
     <SafeAreaView>
@@ -75,7 +91,12 @@ export default function DetailsScreen(props) {
             <TouchableOpacity
             // onPress={()=>addFav(house)}
             >
-              <MaterialCommunityIcons name="star-outline" size={60} color="orange" />
+              <MaterialCommunityIcons
+                onPress={() => handleFavorite()}
+                name={isFavorite ? "star" : "star-outline"}
+                size={60}
+                color="orange"
+              />
             </TouchableOpacity>
           </View>
         </View>
