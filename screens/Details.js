@@ -2,7 +2,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { Dimensions } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import {
   SafeAreaView,
@@ -15,6 +14,7 @@ import {
   Linking,
   FlatList,
 } from "react-native";
+
 import { formatCurrency } from "react-native-format-currency";
 import MapView, { Marker, Callout } from "react-native-maps";
 import { insertValue, removeValue, verifyIsFavorite } from "../helpers/favorite";

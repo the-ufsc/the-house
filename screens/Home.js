@@ -39,6 +39,8 @@ export default function HomeScreen({ navigation }) {
             <Text style={styles.notFound}>Nenhuma residência encontrada :/</Text>
           </View>
         )}
+
+        <View style={{ marginBottom: 20 }} />
       </ScrollView>
     </SafeAreaView>
   );
