@@ -127,7 +127,7 @@ export default function DetailsScreen(props) {
           </View>
           <View style={styles.moreInfo}>
             <Text style={[styles.information]}>Informações adicionais:</Text>
-            <Text style={styles.information}>{house.rooms_description}</Text>
+            <Text style={styles.information}>{house.more_informations}</Text>
           </View>
           <View style={styles.infoTitle}>
             <Text style={[{ textAlign: "center" }, { fontSize: 20 }]}>Contato</Text>
