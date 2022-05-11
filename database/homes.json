@@ -83,10 +83,10 @@
     "bathroom": "Compartilhado"
   },
   {
-    "id": "3",
+    "id": "4",
     "name": "Residencial Darkstyle",
     "address": "Avenida Don Silveira, 333",
-    "price": 2500,
+    "price": 3000,
     "accommodations": 3,
     "images": [
       { "key": 1, "url": "https://www.yankodesign.com/images/design_news/2020/06/all-black-interior-designs-that-will-inspire-you-to-adapt-this-modern-minimal-trend/01-Black-Interior-Design-Inspiration_yankodesign.jpg" },
@@ -111,7 +111,7 @@
     "bathroom": "Compartilhado"
   },
   {
-    "id": "3",
+    "id": "5",
     "name": "Hotel 3 irmãos",
     "address": "Rua dos irmãos, 674",
     "price": 2500,

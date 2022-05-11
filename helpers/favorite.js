@@ -21,7 +21,6 @@ export async function insertValue(value) {
       return true;
     }
   } catch (e) {
-    console.log("Critical Error", e);
     return false;
   }
 }
@@ -40,16 +39,12 @@ export async function removeValue(value) {
 
         // salvar a nova lista
         await AsyncStorage.setItem("data_house", newList.toString());
-      } else {
-        console.log("no existe");
       }
       return true;
     } else {
-      console.log("a lista nem existe kkk");
       return true;
     }
   } catch (e) {
-    console.log("Critical Error", e);
     return false;
   }
 }

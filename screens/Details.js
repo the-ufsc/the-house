@@ -16,7 +16,7 @@ import {
 } from "react-native";
 
 import { formatCurrency } from "react-native-format-currency";
-import MapView, { Marker, Callout } from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import { insertValue, removeValue, verifyIsFavorite } from "../helpers/favorite";
 import { useEffect } from "react";
 import YoutubePlayer from "react-native-youtube-iframe";
@@ -174,13 +174,13 @@ export default function DetailsScreen(props) {
               </View>
             </View>
             <View style={styles.videoBox}>
-                <View>
-                  <Text style={{ fontSize: 20 }}>Detalhes do interior:</Text>
-                </View>
-                <View style={styles.videos}>
-                  <YoutubePlayer height={200} play={false} videoId={house.video} />
-                </View>
+              <View>
+                <Text style={{ fontSize: 20 }}>Detalhes do interior:</Text>
               </View>
+              <View style={styles.videos}>
+                <YoutubePlayer height={200} play={false} videoId={house.video} />
+              </View>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -270,15 +270,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   videoBox: {
-    display:'flex',
-    alignItems:"center",
-    alignContent:'center',
-    backgroundColor: '#FFF',
-    borderRadius:15,
-    width:320
+    display: "flex",
+    alignItems: "center",
+    alignContent: "center",
+    backgroundColor: "#FFF",
+    borderRadius: 15,
+    width: 320,
   },
   videos: {
     width: 320,
-    height: 200
-  }
+    height: 200,
+  },
 });
