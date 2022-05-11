@@ -1,16 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Provider as PaperProvider } from "react-native-paper";
 import Splash from "./components/Splash";
 import HomeScreen from "./screens/Home";
 import DetailsScreen from "./screens/Details";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import {
-  backgroundColor,
-  color,
-} from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 import Favorites from "./screens/Favorites";
 
 export default function App() {

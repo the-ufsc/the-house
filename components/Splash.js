@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text } from "react-native";
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     backgroundColor: "#303030",
-    // padding: 10,
   },
 
   boxFlash: {

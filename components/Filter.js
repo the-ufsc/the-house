@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import Slider from "@react-native-community/slider";
