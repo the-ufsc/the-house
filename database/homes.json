@@ -1,14 +1,18 @@
 [
   {
     "id": "1",
-    "name": "Moradia 01",
+    "name": "Moradia das Aves",
     "address": "Servidão das Pedras, 58",
-    "price": 3680.0,
+    "price": 3680,
     "accommodations": 5,
     "images": [
       {
         "key": "1",
         "url": "https://www.imovelweb.com.br/noticias/wp-content/uploads/2020/03/original-f6761ad4df0a26d3ed2cdf9d7d34d893.jpeg"
+      },
+      {
+        "key": "2",
+        "url": "https://i.lugarcerto.com.br/W6rvKlYLPa8_qgl0QghjGEHA2Lo=/750x0/smart/imgsapp.estadodeminas.lugarcerto.com.br/app/noticia_128576568202/2021/08/24/50933/20210824100129998220u.jpg"
       }
     ],
     "gender": "man",

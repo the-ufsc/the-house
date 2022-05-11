@@ -63,12 +63,9 @@ export async function getValueLocal() {
 export async function verifyIsFavorite(id) {
   // pega todos valores do array salvo
   const favorites = await getValueLocal();
-
   // verifica se a posicao do ID nessa tabela nao eh negativa
   // se for negativo, significa que nao existe.
   // retorna boolean
+  if (!favorites) return false;
   return favorites.split(",").indexOf(id) > -1;
 }
-
-// insertValue("89");
-// removeValue("89");

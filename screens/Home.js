@@ -4,7 +4,7 @@ import homes from "../database/homes.json";
 import Filter from "../components/Filter";
 import CardHouse from "../components/CardHouse";
 
-export default function HomeScreen({ props, navigation }) {
+export default function HomeScreen({ navigation }) {
   const houses = homes;
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(5000);
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#e0dede",
-    paddingTop: 10,
   },
 
   notFound: {

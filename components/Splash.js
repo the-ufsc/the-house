@@ -3,31 +3,44 @@ import { TouchableOpacity, StyleSheet, View, Image, Text } from "react-native";
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function SplashScreen({ navigation }) {
+export default function SplashScreen({ children }) {
+  const [ready, setReady] = useState(false);
+
   async function load() {
-    // simula um carregamento de 2s
-    await new Promise((r) => setTimeout(r, 2000));
-    navigation.navigate("Home");
+    await new Promise((r) => setTimeout(r, 3000));
+    setReady(true);
   }
 
   // executa ao renderizar
   useEffect(() => {
     load();
-  });
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
-      
-      <View>
-        <Image style={styles.image} source={require("../assets/house.png")} />
-        <Text style={styles.text}>The House</Text>
-      </View>
+      {ready ? (
+        children
+      ) : (
+        <View style={styles.boxFlash}>
+          <View>
+            <Image style={styles.image} source={require("../assets/house.png")} />
+            <Text style={styles.text}>The House</Text>
+          </View>
+        </View>
+      )}
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    width: "100%",
+    backgroundColor: "#303030",
+    // padding: 10,
+  },
+
+  boxFlash: {
     flex: 1,
     display: "flex",
     justifyContent: "center",
